@@ -1,26 +1,28 @@
-version: '2'
+version: '3'
 services:
   tws:
+    # image: ib-gateway-docker_tws:latest
     build: .
     ports:
       - "4003:4003"
-      - "5901:5900"
+      - "5901:5900" 
     volumes:
-      - ./ib/IBController.ini:/root/IBController/IBController.ini
+      - ./ib/config.ini:/root/IBC/config.ini
       - ./ib/jts.ini:/root/Jts/jts.ini
     environment:
-      - TZ=America/Chicago
+      # - TZ=America/Chicago
+      - TZ=Asia/Shanghai
       # Variables pulled from /IBController/IBControllerGatewayStart.sh
-      - VNC_PASSWORD=1234 # CHANGEME
-      - TWS_MAJOR_VRSN=972
-      - IBC_INI=/root/IBController/IBController.ini
-      - IBC_PATH=/opt/IBController
-      - TWS_PATH=/root/Jts
+      - VNC_PASSWORD=1111 # CHANGEME
+      - TWS_MAJOR_VRSN=974
+      - IBC_INI=/root/IBC/config.ini
+      - IBC_PATH=/opt/IBC
+      - TWS_PATH=/root/Jts/ibgateway
       - TWS_CONFIG_PATH=/root/Jts
-      - LOG_PATH=/opt/IBController/Logs
-      - TRADING_MODE=paper # either paper or live
-      - TWSUSERID=edemo # IB account
-      - TWSPASSWORD=demouser # IB account password
+      - LOG_PATH=/opt/IBC/Logs
+      - TRADING_MODE=paper    # either paper or live
+      - TWSUSERID=edemo    # IB account
+      - TWSPASSWORD=demouser  # IB account password
       - FIXUSERID=
       - FIXPASSWORD=
       - JAVA_PATH=

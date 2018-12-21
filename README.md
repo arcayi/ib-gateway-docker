@@ -21,19 +21,19 @@ Creating ibgatewaydocker_tws_1 ...
 Creating ibgatewaydocker_tws_1 ... done
 Attaching to ibgatewaydocker_tws_1
 tws_1  | Starting virtual X frame buffer: Xvfb.
-tws_1  | find: '/opt/IBController/Logs': No such file or directory
+tws_1  | find: '/opt/IBC/Logs': No such file or directory
 tws_1  | stored passwd in file: /.vnc/passwd
 tws_1  | Starting x11vnc.
 tws_1  |
 tws_1  | +==============================================================================
 tws_1  | +
-tws_1  | + IBController version 3.2.0
+tws_1  | + IBC version 3.2.0
 tws_1  | +
 tws_1  | + Running GATEWAY 960
 tws_1  | +
 tws_1  | + Diagnostic information is logged in:
 tws_1  | +
-tws_1  | + /opt/IBController/Logs/ibc-3.2.0_GATEWAY-960_Tuesday.txt
+tws_1  | + /opt/IBC/Logs/ibc-3.2.0_GATEWAY-960_Tuesday.txt
 tws_1  | +
 tws_1  | +
 tws_1  | Forking :::4001 onto 0.0.0.0:4003\n
