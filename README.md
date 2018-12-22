@@ -2,8 +2,8 @@
 
 IB Gateway running in Docker with IB Controller and VNC
 
-TWS Gateway: v972.1k
-IB Controller: v3.2.0
+TWS Gateway: v974
+IbcAlpha/IBC: v3.7.3
 
 ### Getting Started
 
@@ -20,23 +20,22 @@ IB Controller: v3.2.0
 Creating ibgatewaydocker_tws_1 ...
 Creating ibgatewaydocker_tws_1 ... done
 Attaching to ibgatewaydocker_tws_1
-tws_1  | Starting virtual X frame buffer: Xvfb.
-tws_1  | find: '/opt/IBC/Logs': No such file or directory
-tws_1  | stored passwd in file: /.vnc/passwd
-tws_1  | Starting x11vnc.
-tws_1  |
-tws_1  | +==============================================================================
-tws_1  | +
-tws_1  | + IBC version 3.2.0
-tws_1  | +
-tws_1  | + Running GATEWAY 960
-tws_1  | +
-tws_1  | + Diagnostic information is logged in:
-tws_1  | +
-tws_1  | + /opt/IBC/Logs/ibc-3.2.0_GATEWAY-960_Tuesday.txt
-tws_1  | +
-tws_1  | +
-tws_1  | Forking :::4001 onto 0.0.0.0:4003\n
+ib-gateway_1  | Starting virtual X frame buffer: Xvfb.
+ib-gateway_1  | APP=GATEWAY,TRADING_MODE=paper,port=4002
+ib-gateway_1  | stored passwd in file: /.vnc/passwd
+ib-gateway_1  | Starting x11vnc.
+ib-gateway_1  | +==============================================================================
+ib-gateway_1  | +
+ib-gateway_1  | + IBC version 3.7.3
+ib-gateway_1  | +
+ib-gateway_1  | + Running GATEWAY 974
+ib-gateway_1  | +
+ib-gateway_1  | + Diagnostic information is logged in:
+ib-gateway_1  | +
+ib-gateway_1  | + /opt/IBC/Logs/ibc-3.7.3_GATEWAY-974_Saturday.txt
+ib-gateway_1  | +
+ib-gateway_1  | +
+ib-gateway_1  | Forking :::-1 onto 0.0.0.0:4003\n
 ```
 
 You will now have the IB Gateway app running on port 4003 and VNC on 5901.
