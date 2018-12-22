@@ -1,6 +1,6 @@
-version: '3'
+version: '2'
 services:
-  tws:
+  ib-gateway:
     # image: ib-gateway-docker_tws:latest
     build: .
     ports:
@@ -12,18 +12,19 @@ services:
     environment:
       # - TZ=America/Chicago
       - TZ=Asia/Shanghai
-      # Variables pulled from /IBController/IBControllerGatewayStart.sh
       - VNC_PASSWORD=1111 # CHANGEME
+      # Variables pulled from /IBController/IBControllerGatewayStart.sh
       - TWS_MAJOR_VRSN=974
       - IBC_INI=/root/IBC/config.ini
       - IBC_PATH=/opt/IBC
       - TWS_PATH=/root/Jts/ibgateway
       - TWS_CONFIG_PATH=/root/Jts
       - LOG_PATH=/opt/IBC/Logs
+      # - JAVA_PATH=
+      - APP=GATEWAY
+      # for security reasons, some of the following infomation, like TWSUSERID and TWSPASSWORD should not be published.
       - TRADING_MODE=paper    # either paper or live
       - TWSUSERID=edemo    # IB account
       - TWSPASSWORD=demouser  # IB account password
       - FIXUSERID=
       - FIXPASSWORD=
-      - JAVA_PATH=
-      - APP=GATEWAY

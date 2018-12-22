@@ -1,7 +1,7 @@
 FROM ubuntu:16.04
 LABEL Name=docker-env-for-ibtws Version=0.0.1 maintainer="Weihua Yi (arcayi@qq.com)"
 
-# 更换 Ubuntu 源为 阿里云
+# change Ubuntu apt source to aliyun
 RUN cp /etc/apt/sources.list /etc/apt/sources.list.bak \
   && sed -i s@/archive.ubuntu.com/@/mirrors.aliyun.com/@g /etc/apt/sources.list \
   && apt-get clean \
@@ -19,14 +19,10 @@ RUN cp /etc/apt/sources.list /etc/apt/sources.list.bak \
 # Setup IB TWS
 RUN mkdir -p /opt/TWS
 WORKDIR /opt/TWS
-# RUN wget -q http://one-algo.s3.amazonaws.com/ibgateway-latest-standalone-linux-x64-v972.1k.sh
 RUN wget -q https://download.ibkr.com.cn/installers/ibgateway/latest-standalone/ibgateway-latest-standalone-linux-x64.sh
 RUN chmod a+x ibgateway-latest-standalone-linux-x64.sh
 
 # Setup  IBController
-# RUN mkdir -p /opt/IBController/
-# WORKDIR /opt/IBController/
-# RUN wget -q http://one-algo.s3.amazonaws.com/IBController-QuantConnect-3.2.0.zip
 RUN mkdir -p /opt/IBC/Logs
 WORKDIR /opt/IBC/
 RUN wget -q https://github.com/IbcAlpha/IBC/releases/download/3.7.3/IBCLinux-3.7.3.zip
@@ -46,12 +42,6 @@ WORKDIR /
 
 # Install TWS
 RUN yes n | /opt/TWS/ibgateway-latest-standalone-linux-x64.sh
-
-#CMD yes
-
-# Launch a virtual screen (this seems to be broken)
-#RUN Xvfb :1 -screen 0 1024x768x24 2>&1 >/dev/null &
-#RUN export DISPLAY=:1
 
 ENV DISPLAY :0
 
