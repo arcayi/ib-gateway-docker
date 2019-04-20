@@ -1,4 +1,4 @@
-#!/bin/bash -e
+#!/bin/bash
 
 VNC=/usr/bin/x11vnc
 VNCARGS="-forever -rfbport 5900 -rfbauth /.vnc/passwd \

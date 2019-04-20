@@ -15,3 +15,5 @@ node_modules/
 
 *.ref
 *.debug*
+IBCLinux-*.zip
+ibgateway-*.sh
